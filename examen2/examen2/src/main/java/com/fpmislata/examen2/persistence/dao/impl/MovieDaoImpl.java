@@ -24,4 +24,19 @@ public class MovieDaoImpl implements MovieDao {
 
     }
 
+    @Override
+    public List<MovieEntity> findAll() {
+        return movieEntityList;
+    }
+
+    @Override
+    public MovieEntity findById(int id) {
+        for (MovieEntity entity : movieEntityList) {
+            if (entity.getId() == id) {
+                return entity;
+            }
+        }
+        return null;
+    }
+
 }

@@ -17,4 +17,19 @@ public class DirectorDaoImpl implements DirectorDao {
             new DirectorEntity(7, "David Fincher")
     );
 
+    @Override
+    public List<DirectorEntity> findAll() {
+        return directorEntityList;
+    }
+
+    @Override
+    public DirectorEntity findById(int id) {
+        for (DirectorEntity entity : directorEntityList) {
+            if (entity.getId() == id) {
+                return entity;
+            }
+        }
+        return null;
+    }
+
 }

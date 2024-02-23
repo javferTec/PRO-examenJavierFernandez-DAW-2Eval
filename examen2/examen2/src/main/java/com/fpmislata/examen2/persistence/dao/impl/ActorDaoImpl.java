@@ -36,4 +36,19 @@ public class ActorDaoImpl implements ActorDao {
             new ActorEntity(26, "Alison Doody")
     );
 
+    @Override
+    public List<ActorEntity> findAll() {
+        return actorEntityList;
+    }
+
+    @Override
+    public ActorEntity findById(int id) {
+        for (ActorEntity entity: actorEntityList) {
+            if (entity.getId() == id) {
+                return entity;
+            }
+        }
+        return null;
+    }
+
 }

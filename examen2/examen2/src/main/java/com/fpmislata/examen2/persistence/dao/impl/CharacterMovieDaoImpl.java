@@ -40,4 +40,19 @@ public class CharacterMovieDaoImpl implements CharacterMovieDao {
             new CharacterMovieEntity(29, 10, 17, "Henry Jones"),
             new CharacterMovieEntity(30, 10, 26, "Elsa Schneider")
     );
+
+    @Override
+    public List<CharacterMovieEntity> findAll() {
+        return characterMovieEntityList;
+    }
+
+    @Override
+    public CharacterMovieEntity findById(int id) {
+        for (CharacterMovieEntity entity : characterMovieEntityList) {
+            if (entity.getId() == id) {
+                return entity;
+            }
+        }
+        return null;
+    }
 }
